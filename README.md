@@ -5,6 +5,7 @@ Projects and Telerik Academy homeworks
 
 Added for now:
 
+01.Arrays
 
 02.MultidimentionalArrays
 
