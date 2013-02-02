@@ -171,6 +171,8 @@ pip-log.txt
 *.config
 AssemblyInfo.cs
 Program.cs
+*.zip
+*.rar
 
 #Folders
 01.IntroToProgramming
