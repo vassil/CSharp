@@ -5,7 +5,7 @@ class ExtractURLElements
 {
     static void Main()
     {
-        string url = @"http://www.dotnetperls.com/regex-match/asd";
+        string url = @"http://www.example.com/regex/input";
         MatchCollection matchProtocolAndSiteName = Regex.Matches(url, @"([\da-z_\.-]+)");
 
         Console.WriteLine("[protocol] -> {0}", matchProtocolAndSiteName[0]);

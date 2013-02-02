@@ -5,7 +5,7 @@ class ExtractText
 {
     static void Main()
     {
-        StreamReader reader = new StreamReader(@"C:\Users\Kirov\Desktop\text.html");
+        StreamReader reader = new StreamReader(@"..\..\text.html");
         using (reader)
         {
             string line;
