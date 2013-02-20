@@ -13,7 +13,7 @@
   	x2 + 5 = 1x2 + 0x + 5 -> 5 0 1
 ####12. Extend the program to support also subtraction and multiplication of polynomials.
 
-####Write a program that can solve these tasks:
+####13. Write a program that can solve these tasks:
     Reverses the digits of a number
     Calculates the average of a sequence of integers
     Solves a linear equation a * x + b = 0
@@ -23,4 +23,7 @@
     The decimal number should be non-negative
     The sequence should not be empty
     a should not be equal to 0
+
+####14. Write methods to calculate minimum, maximum, average, sum and product of given set of integer numbers. Use variable number of arguments.
+####15. * Modify your last program and try to make it work for any number type, not just integer (e.g. decimal, float, byte, etc.). Use generic method (read in Internet about generic methods in C#).
 
