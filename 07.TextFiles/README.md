@@ -3,13 +3,13 @@
 ####3. Write a program that reads a text file and inserts line numbers in front of each of its lines. The result should be written to another text file.
 ####4. Write a program that compares two text files line by line and prints the number of lines that are the same and the number of lines that are different. Assume the files have equal number of lines.
 ####5. Write a program that reads a text file containing a square matrix of numbers and finds in the matrix an area of size 2 x 2 with a maximal sum of its elements. The first line in the input file contains the size of matrix N. Each of the next N lines contain N numbers separated by space. The output should be a single number in a separate text file. Example:
-4
-2 3 3 4
-0 2 3 4  		17
-3 7 1 2
-4 3 3 2
+	4
+	2 3 3 4
+	0 2 3 4  		17
+	3 7 1 2
+	4 3 3 2
 ####5. Write a program that reads a text file containing a list of strings, sorts them and saves them to another text file. Example:
-  Ivan			George
+  	Ivan			George
 	Peter			Ivan
 	Maria			Maria
 	George			Peter
@@ -18,7 +18,16 @@
 ####9. Write a program that deletes from given text file all odd lines. The result should be in the same file.
 ####10. Write a program that extracts from given XML file all the text without the tags. Example:
 
-      <?xml version="1.0"><student><name>Pesho</name><age>21</age><interests count="3"><interest> Games</instrest><interest>C#</instrest><interest> Java</instrest></interests></student>
+      <?xml version="1.0">
+	      <student>
+	      	<name>Pesho</name>
+	      <age>21</age>
+		      <interests count="3">
+			      <interest> Games</instrest>
+				      <interest>C#</instrest>
+			      <interest> Java</instrest>
+		      </interests>
+	      </student>
 
 ####11. Write a program that deletes from a text file all words that start with the prefix "test". Words contain only the symbols 0...9, a...z, A…Z, _.
 ####12. Write a program that removes from a text file all words listed in given another text file. Handle all possible exceptions in your methods.
