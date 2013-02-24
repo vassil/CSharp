@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-class Call
+public class Call
 {
     private DateTime dateAndTime;
     private string dialedNumber;
@@ -35,5 +34,6 @@ class Call
         get { return this.duration; }
         set { duration = value; }
     }
+
 }
 

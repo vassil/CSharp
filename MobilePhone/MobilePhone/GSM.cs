@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GSM
 {
@@ -26,9 +27,17 @@ public class GSM
     private string manufactorer;
     private double? price;
     private string owner;
-    private List<Call> callHistory;
+    private List<Call> callHistory = new List<Call>();
 
     public GSM(string model, string manufacturer) : this(model, manufacturer, null, null)
+    {
+    }
+
+    public GSM(string model, string manufacturer, double? price) : this(model, manufacturer, null, null)
+    {
+    }
+
+    public GSM(string model, string manufacturer, string owner) : this(model, manufacturer, null, null)
     {
     }
 
@@ -109,9 +118,9 @@ public class GSM
         }
     }
 
-    public List<Call> CallHistory 
+    public IReadOnlyCollection<Call> CallHistory 
     {
-        get { return callHistory; }
+        get { return callHistory.AsReadOnly(); }
     }
 
     public Display Display = new Display();
@@ -121,10 +130,10 @@ public class GSM
     public override string ToString()
     {
         StringBuilder allInfo = new StringBuilder();
-        allInfo.AppendFormat("Phone model - {0} \r\n", this.model);
-        allInfo.AppendFormat("Phone manufactorer - {0} \r\n", this.manufactorer);
-        allInfo.AppendFormat("Phone price - {0}lv \r\n", this.price);
-        allInfo.AppendFormat("Phone owner - {0} \r\n", this.owner);
+        allInfo.AppendFormat("Phone model - {0} \r\n", this.Model);
+        allInfo.AppendFormat("Phone manufactorer - {0} \r\n", this.Manufactorer);
+        allInfo.AppendFormat("Phone price - {0}lv \r\n", this.Price);
+        allInfo.AppendFormat("Phone owner - {0} \r\n", this.Owner);
         allInfo.AppendFormat("Display size - {0}' \r\n", Display.Size);
         allInfo.AppendFormat("Display colors - {0} \r\n", Display.NumberOfColors);
         allInfo.AppendFormat("Battery model - {0} \r\n", Battery.Model);
@@ -151,5 +160,35 @@ public class GSM
     public void ClearCallsHistory()
     {
         callHistory.Clear();
+    }
+
+    public decimal PriceOfAllCalls(decimal callPrice)
+    {
+        decimal totalPrice = 0;
+
+        int secondsAll = callHistory.Sum(x => x.Duration); //sums the seconds of all converstaions
+
+        totalPrice = Math.Ceiling((secondsAll / (decimal)60)) * callPrice;
+
+        return totalPrice;
+    }
+
+    public void RemoveLongestCall()
+    {
+        int longestCallDuration = callHistory.Max(x => x.Duration);
+        int position = 0;
+
+        foreach (var call in callHistory)
+        {
+            if (call.Duration == longestCallDuration)
+            {
+                RemoveCallsFromHistory(position);
+                break;
+            }
+            else
+            {
+                position++;
+            }
+        }
     }
 }
