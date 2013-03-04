@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Main
+public class MainClass
 {
-    static void Main() 
+    static void Main()
     {
         Path setPath = new Path();
         setPath.AddPath(new Point3D(3, 5, 6));
@@ -12,5 +12,5 @@ public class Main
         PathStorage.SavePathsToFile(setPath.SeqOfPoints);
 
         PathStorage.ReadPathsFromFile();
-    }    
+    }
 }

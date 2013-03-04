@@ -2,7 +2,8 @@
 
 public class MatrixException : ApplicationException
 {
-    public MatrixException(string message) : base(message)
+    public MatrixException(string message)
+        : base(message)
     {
 
     }

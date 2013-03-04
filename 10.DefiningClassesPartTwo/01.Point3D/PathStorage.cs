@@ -6,7 +6,7 @@ public static class PathStorage
 {
     public static void SavePathsToFile(IReadOnlyCollection<Point3D> seqOfPoints)
     {
-        using (StreamWriter writePath = new StreamWriter("Path.txt"))
+        using (StreamWriter writePath = new StreamWriter("Path.txt")) //Path.txt is in the bin folder
         {
             foreach (var path in seqOfPoints)
             {
@@ -17,7 +17,7 @@ public static class PathStorage
 
     public static void ReadPathsFromFile()
     {
-        using (StreamReader readPath = new StreamReader("Path.txt"))
+        using (StreamReader readPath = new StreamReader("Path.txt")) //Path.txt is in the bin folder
         {
             string content = readPath.ReadToEnd();
             Console.WriteLine(content);

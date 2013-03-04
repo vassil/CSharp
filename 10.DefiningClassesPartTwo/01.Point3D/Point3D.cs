@@ -6,6 +6,8 @@ public struct Point3D
     private int pointY;
     private int pointZ;
 
+    #region properties and chained constructors
+
     public int X
     {
         get { return pointX; }
@@ -24,7 +26,8 @@ public struct Point3D
         set { this.pointZ = value; }
     }
 
-    public Point3D(int x, int y, int z) : this()
+    public Point3D(int x, int y, int z)
+        : this()
     {
         this.X = x;
         this.Y = y;
@@ -37,7 +40,9 @@ public struct Point3D
     {
         get { return zero; }
     }
+    #endregion
 
+    //Override ToString()
     public override string ToString()
     {
         return String.Format("{0:F2}, {1:F2}, {2:F2}", this.X, this.Y, this.Z);

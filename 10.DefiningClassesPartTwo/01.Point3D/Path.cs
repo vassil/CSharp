@@ -9,7 +9,7 @@ public class Path
     }
     private List<Point3D> seqOfPoints = new List<Point3D>();
 
-    public IReadOnlyCollection<Point3D> SeqOfPoints 
+    public IReadOnlyCollection<Point3D> SeqOfPoints
     {
         get { return seqOfPoints.AsReadOnly(); }
     }

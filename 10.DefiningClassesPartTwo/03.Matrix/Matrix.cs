@@ -4,8 +4,10 @@ using System.Text;
 public class Matrix<T>
 {
     private T[,] matrix;
-    private readonly  int rows = 0;
+    private readonly int rows = 0;
     private int cols = 0;
+
+    #region constructor and properties
 
     public Matrix(int matrixRowLength, int matrixColLength)
     {
@@ -27,8 +29,10 @@ public class Matrix<T>
     {
         get { return this.cols; }
     }
+    #endregion
 
-    #region indexer and ToString override
+    #region indexer and overrides
+
     public T this[int row, int col]
     {
         get
@@ -57,16 +61,59 @@ public class Matrix<T>
         {
             for (int col = 0; col < matrix.GetLength(1); col++)
             {
-                toString.AppendFormat(" {0} ", matrix[row, col]);
+                toString.AppendFormat(" {0,5} ", matrix[row, col]);
             }
             toString.AppendLine();
         }
 
         return toString.ToString();
     }
+
+    public static bool operator true(Matrix<T> m)
+    {
+        int countZeros = 0;
+        for (int i = 0; i < m.Rows; i++)
+        {
+            for (int j = 0; j < m.Cols; j++)
+            {
+                if ((dynamic)m[i, j] != 0)
+                {
+                    countZeros++;
+                }
+            }
+        }
+
+        if (countZeros > 0)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    public static bool operator false(Matrix<T> m)
+    {
+        int countZeros = 0;
+        for (int i = 0; i < m.Rows; i++)
+        {
+            for (int j = 0; j < m.Cols; j++)
+            {
+                if ((dynamic)m[i, j] != 0)
+                {
+                    countZeros++;
+                }
+            }
+        }
+
+        if (countZeros > 0)
+        {
+            return true;
+        }
+        return false;
+    }
     #endregion
 
     #region overload operators
+
     public static Matrix<T> operator +(Matrix<T> firstMatrix, Matrix<T> secondMatrix)
     {
         Matrix<T> matrix = new Matrix<T>(firstMatrix.Rows, firstMatrix.Cols);

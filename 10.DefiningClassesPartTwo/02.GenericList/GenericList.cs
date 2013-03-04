@@ -6,25 +6,16 @@ public class GenericList<T>
     private T[] listElements;
     private int lastChangedElement = 0;
 
-    //Constructor
+    #region constructor, indexer, and overrided ToString()
+
     public GenericList(int numberOfElements)
     {
         this.listElements = new T[numberOfElements];
     }
 
-    public void Add(T value) 
+    public T this[int index]
     {
-        if (lastChangedElement==listElements.Length)
-        {
-            Array.Resize(ref this.listElements, this.listElements.Length * 2);
-        }
-        this.listElements[this.lastChangedElement] = value;
-        this.lastChangedElement++;
-    }
-
-    public T this[int index] 
-    {
-        get 
+        get
         {
             if (index > listElements.Length)
             {
@@ -41,7 +32,32 @@ public class GenericList<T>
         }
     }
 
-    public void Clear() 
+    public override string ToString()
+    {
+        StringBuilder list = new StringBuilder();
+
+        for (int i = 0; i < this.listElements.Length; i++)
+        {
+            list.AppendFormat("{0}, ", this.listElements[i]);
+        }
+
+        return list.ToString();
+    }
+    #endregion
+
+    #region Add(), Clear() and Find() methods
+
+    public void Add(T value)
+    {
+        if (lastChangedElement == listElements.Length)
+        {
+            Array.Resize(ref this.listElements, this.listElements.Length * 2);
+        }
+        this.listElements[this.lastChangedElement] = value;
+        this.lastChangedElement++;
+    }
+
+    public void Clear()
     {
         this.listElements = new T[this.listElements.Length];
     }
@@ -62,18 +78,9 @@ public class GenericList<T>
         }
         return -1;
     }
+    #endregion
 
-    public override string ToString()
-    {
-        StringBuilder list = new StringBuilder();
-
-        for (int i = 0; i < this.listElements.Length; i++)
-        {
-            list.AppendFormat("{0}, ", this.listElements[i]);
-        }
-
-        return list.ToString();
-    }
+    #region Min() and Max() Generic methods
 
     public T Min<T>() where T : IComparable<T>
     {
@@ -104,4 +111,5 @@ public class GenericList<T>
 
         return maxElement;
     }
+    #endregion
 }
