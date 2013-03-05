@@ -70,11 +70,6 @@ public class GenericList<T>
             {
                 return i;
             }
-            else
-            {
-                Console.WriteLine("No such element");
-                return -1;
-            }
         }
         return -1;
     }
