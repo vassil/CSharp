@@ -98,7 +98,7 @@ namespace School
         {
             StringBuilder schoolClass = new StringBuilder();
 
-            schoolClass.AppendLine("-Students in class-");
+            schoolClass.AppendLine("-Students in class " + ClassIdentifier + " -");
             foreach (var student in ClassStudents)
             {
                 schoolClass.AppendFormat("{0} - number {1}", student.Name, student.ClassNumber);
