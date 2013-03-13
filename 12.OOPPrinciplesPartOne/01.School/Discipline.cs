@@ -19,15 +19,18 @@ namespace School
 
         #region Properties
 
-        public string Name {
-            get { return this.name; } 
+        public string Name
+        {
+            get { return this.name; }
         }
 
-        public int NumberOfLectures {
+        public int NumberOfLectures
+        {
             get { return this.numberOfLectures; }
         }
 
-        public int NumberOfExercises {
+        public int NumberOfExercises
+        {
             get { return this.numberOfExercises; }
         }
 

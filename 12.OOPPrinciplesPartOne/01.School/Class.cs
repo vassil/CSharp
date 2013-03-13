@@ -22,7 +22,7 @@ namespace School
 
         #region  Properties
 
-        IReadOnlyCollection<Teacher> ClassTeachers
+        public IReadOnlyCollection<Teacher> ClassTeachers
         {
             get { return this.classTeachers; }
         }
@@ -37,7 +37,7 @@ namespace School
             get { return this.classIdentifier; }
         }
 
-        public string Comments { get; set; } 
+        public string Comments { get; set; }
 
         #endregion
 
@@ -64,7 +64,7 @@ namespace School
         {
             foreach (var student in studentsInfo)
             {
-                this.classStudents.Add(student);   
+                this.classStudents.Add(student);
             }
         }
 

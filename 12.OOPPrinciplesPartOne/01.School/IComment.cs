@@ -5,7 +5,7 @@ namespace School
 {
     public interface IComment
     {
-        string Comments { get; } 
+        string Comments { get; }
         void AddComment(string text);
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace School
 {
-    public class Teacher : Person, IComment
+    public class Teacher : Person
     {
         private List<Discipline> disciplines = new List<Discipline>();
 
@@ -12,8 +12,6 @@ namespace School
         {
             get { return disciplines; }
         }
-
-        public string Comments { get; set; } 
 
         public Teacher(string teacherName)
         {
@@ -29,15 +27,6 @@ namespace School
         public void AddDicipline(Discipline discipline)
         {
             this.disciplines.Add(discipline);
-        }
-
-        /// <summary>
-        /// Add a comment to that teacher
-        /// </summary>
-        /// <param name="text"></param>
-        public void AddComment(string text)
-        {
-            Comments = text;
         }
 
         /// <summary>

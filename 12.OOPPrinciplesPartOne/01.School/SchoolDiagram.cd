@@ -3,7 +3,7 @@
   <Class Name="School.Class" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIIAAAACAEAAAAEBAEAAASAAAAAgAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAAAIIAAAACAEAAAAEBAEAAASCAAAAgAAAAAAIAA=</HashCode>
       <FileName>Class.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -11,7 +11,7 @@
   <Class Name="School.Discipline" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAABAEAIAAAASAAAAEAAAAABAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAABAEAIAAAASAAAAECAAAABAAAAAAIAA=</HashCode>
       <FileName>Discipline.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -23,35 +23,35 @@
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="School.Program" Collapsed="true">
+  <Class Name="School.School" Collapsed="true">
     <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="School.School" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAABgAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>School.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="School.Student" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACQIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAAACQIAAAEAAAAAAAAAAAAAAAACAAAAAAAAAAAIAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="School.Teacher" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABIgAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAABIgAAAAAAEAAAAAEAAAAAACAAAAAAAAAAAIAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="School.TestProgram" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>TestProgram.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="School.IComment" Collapsed="true">
     <Position X="5.25" Y="2.75" Width="1.5" />

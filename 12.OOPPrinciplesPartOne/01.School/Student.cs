@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace School
 {
-    public class Student : Person, IComment
+    public class Student : Person
     {
         private int classNumber;
         private List<int> allStudentsNumbers = new List<int>();
@@ -22,20 +22,9 @@ namespace School
             get { return this.classNumber; }
         }
 
-        public string Comments { get; set; }
-
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// Add a comment to this student
-        /// </summary>
-        /// <param name="text"></param>
-        public void AddComment(string text)
-        {
-            this.Comments = text;
-        }
 
         /// <summary>
         /// View the comment (if there is any) for this teacher

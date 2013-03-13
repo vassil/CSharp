@@ -15,8 +15,9 @@ namespace School
         #region Properties
 
         //there is no school without name, right?
-        public string Name{
-            get { return name; } 
+        public string Name
+        {
+            get { return name; }
         }
 
         #endregion
