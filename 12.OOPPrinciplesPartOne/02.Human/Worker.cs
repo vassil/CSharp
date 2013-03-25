@@ -17,6 +17,8 @@ namespace Human
 
         }
 
+        #region Properties
+
         public decimal WorkHoursPerDay
         {
             get { return this.workHoursPerDay; }
@@ -28,6 +30,8 @@ namespace Human
             get { return this.weekSalary; }
             set { this.weekSalary = value; }
         }
+
+        #endregion
 
         public decimal MoneyPerHour()
         {

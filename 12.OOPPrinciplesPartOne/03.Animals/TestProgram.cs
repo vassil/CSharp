@@ -10,14 +10,14 @@ namespace Animals
             Animal[] animals = 
             {
                 new Cat("Pisana", Sex.Female, 6),
-                new Tomcat("Rusty", Sex.Female, 10),
-                new Kitten("Klucky", Sex.Male, 1),
+                new Tomcat("Rusty", 10),
+                new Kitten("Klucky", 1),
                 new Dog("Sharo", Sex.Male, 9),
                 new Frog("Frodo?", Sex.Male, 1),
 
                 new Cat("Maca", Sex.Female, 4),
-                new Tomcat("Strahil", Sex.Male, 12),
-                new Kitten("Kotence", Sex.Male, 1),
+                new Tomcat("Strahil",  12),
+                new Kitten("Kotence", 1),
                 new Dog("Balkan", Sex.Male, 15),
                 new Frog("Frodo2?", Sex.Male, 2)
             };

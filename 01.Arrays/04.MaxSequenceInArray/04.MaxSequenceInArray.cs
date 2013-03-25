@@ -5,7 +5,7 @@ class MaxSequenceInArray
 {
     static void Main()
     {
-        int[] array = { 2, 1, 1, 2, 3, 3, 3, 2, 2, 2 };
+        int[] array = { 2, 1, 1, 2, 3, 3,3, 3, 2, 2, 2 };
 
         int bestSequence = 1;
         int currentSequence = 1;
