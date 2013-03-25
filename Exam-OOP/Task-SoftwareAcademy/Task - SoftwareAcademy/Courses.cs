@@ -1,63 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace SoftwareAcademy
+public abstract class Courses : ICourse
 {
-    public abstract class Courses : ICourse
+    protected IList<string> allTopics = new List<string>();
+    private string name;
+    private ITeacher teacherInstance = new Teacher();
+
+    public Courses(string name, ITeacher teacher = null)
     {
-        protected IList<string> allTopics = new List<string>();
-        private string name;
-        private ITeacher teacherInstance = new Teacher();
+        this.Name = name;
+        this.Teacher = teacher;
+    }
 
-        public Courses(string name, ITeacher teacher = null)
+    public string Name
+    {
+        get
         {
-            this.Name = name;
-            this.Teacher = teacher;
+            return this.name;
         }
-
-        public string Name
+        set
         {
-            get
+            if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
             {
-                return this.name;
+                throw new ArgumentNullException();
             }
-            set
+            else
             {
-                if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentNullException();
-                }
-                else
-                {
-                    this.name = value;
-                }
+                this.name = value;
             }
-        }
-
-        public ITeacher Teacher
-        {
-            get
-            {
-                return this.teacherInstance;
-            }
-            set
-            {
-                if (value == null)
-                {
-                    teacherInstance.Name = null;
-                }
-                else
-                {
-                    teacherInstance = value;
-                }
-            }
-        }
-
-        public void AddTopic(string topic)
-        {
-            allTopics.Add(topic);
         }
     }
+
+    public ITeacher Teacher
+    {
+        get
+        {
+            return this.teacherInstance;
+        }
+        set
+        {
+            if (value == null)
+            {
+                teacherInstance.Name = null;
+            }
+            else
+            {
+                teacherInstance = value;
+            }
+        }
+    }
+
+    public void AddTopic(string topic)
+    {
+        allTopics.Add(topic);
+    }
 }
+

@@ -3,72 +3,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SoftwareAcademy
+public class LocalCourse : Courses, ILocalCourse
 {
-    public class LocalCourse : Courses, ILocalCourse
-    {
-        public string lab;
+    public string lab;
 
-        public LocalCourse(string name, ITeacher teacher, string lab)
-            :base(name, teacher)
+    public LocalCourse(string name, ITeacher teacher, string lab)
+        : base(name, teacher)
+    {
+        this.Lab = lab;
+    }
+
+    public string Lab
+    {
+        get
         {
-            this.Lab = lab;
+            return this.lab;
+        }
+        set
+        {
+            if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                this.lab = value;
+            }
+        }
+    }
+
+    public override string ToString()
+    {
+        StringBuilder toString = new StringBuilder();
+
+        toString.AppendFormat("LocalCourse: Name={0}; ", base.Name);
+
+        if (base.Teacher.Name != null)
+        {
+            toString.AppendFormat("Teacher={0}; ", base.Teacher.Name);
         }
 
-        public string Lab
+        if (base.allTopics.Count != 0)
         {
-            get
+
+            toString.Append("Topics=[");
+
+            for (int i = 0; i < base.allTopics.Count; i++)
             {
-                return this.lab;
-            }
-            set
-            {
-                if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
+                //TODO: Check if the comma at the end couses problems
+                if (i == base.allTopics.Count - 1)
                 {
-                    throw new ArgumentNullException();
+                    toString.AppendFormat("{0}", base.allTopics[i]);
                 }
                 else
                 {
-                    this.lab = value;
+                    toString.AppendFormat("{0}, ", base.allTopics[i]);
                 }
             }
+
+            toString.Append("]; ");
+
         }
+        toString.AppendFormat("Lab={0}", this.Lab);
 
-        public override string ToString()
-        {
-            StringBuilder toString = new StringBuilder();
-
-            toString.AppendFormat("LocalCourse: Name={0}; ", base.Name);
-
-            if (base.Teacher.Name != null)
-            {
-                toString.AppendFormat("Teacher={0}; ", base.Teacher.Name);
-            }
-
-            if (base.allTopics.Count != 0)
-            {
-
-                toString.Append("Topics=[");
-
-                for (int i = 0; i < base.allTopics.Count; i++)
-                {
-                    //TODO: Check if the comma at the end couses problems
-                    if (i == base.allTopics.Count - 1)
-                    {
-                        toString.AppendFormat("{0}", base.allTopics[i]);
-                    }
-                    else
-                    {
-                        toString.AppendFormat("{0}, ", base.allTopics[i]);
-                    }
-                }
-
-                toString.Append("]; ");
-
-            }
-            toString.AppendFormat("Lab={0}", this.Lab);
-
-            return toString.ToString();
-        }
+        return toString.ToString();
     }
 }

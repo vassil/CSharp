@@ -5,90 +5,29 @@ using System.CodeDom.Compiler;
 using Microsoft.CSharp;
 using System.Reflection;
 
-namespace SoftwareAcademy
+public class SoftwareAcademyCommandExecutor
 {
-    public interface ITeacher
+    static void Main()
     {
-        string Name { get; set; }
-        void AddCourse(ICourse course);
-        string ToString();
+        string csharpCode = ReadInputCSharpCode();
+        CompileAndRun(csharpCode);
     }
 
-    public interface ICourse
+    private static string ReadInputCSharpCode()
     {
-        string Name { get; set; }
-        ITeacher Teacher { get; set; }
-        void AddTopic(string topic);
-        string ToString();
-    }
-
-    public interface ILocalCourse : ICourse
-    {
-        string Lab { get; set; }
-    }
-
-    public interface IOffsiteCourse : ICourse
-    {
-        string Town { get; set; }
-    }
-
-    public interface ICourseFactory
-    {
-        ITeacher CreateTeacher(string name);
-        ILocalCourse CreateLocalCourse(string name, ITeacher teacher, string lab);
-        IOffsiteCourse CreateOffsiteCourse(string name, ITeacher teacher, string town);
-    }
-
-    public class CourseFactory : ICourseFactory
-    {
-        public ITeacher CreateTeacher(string name)
+        StringBuilder result = new StringBuilder();
+        string line;
+        while ((line = Console.ReadLine()) != "")
         {
-            //returns teacher object
-            ITeacher newTeacher = new Teacher(name);
-
-            return newTeacher;
+            result.AppendLine(line);
         }
-
-        public ILocalCourse CreateLocalCourse(string name, ITeacher teacher, string lab)
-        {
-            //returns a localCourse object
-            ILocalCourse newLocalCourse = new LocalCourse(name, teacher, lab);
-
-            return newLocalCourse;
-        }
-
-        public IOffsiteCourse CreateOffsiteCourse(string name, ITeacher teacher, string town)
-        {
-            //returns a offsiteCourse object
-            IOffsiteCourse newLocalCourse = new OffsiteCourse(name, teacher, town);
-
-            return newLocalCourse;
-        }
+        return result.ToString();
     }
 
-    public class SoftwareAcademyCommandExecutor
+    static void CompileAndRun(string csharpCode)
     {
-        static void Main()
-        {
-            string csharpCode = ReadInputCSharpCode();
-            CompileAndRun(csharpCode);
-        }
-
-        private static string ReadInputCSharpCode()
-        {
-            StringBuilder result = new StringBuilder();
-            string line;
-            while ((line = Console.ReadLine()) != "")
-            {
-                result.AppendLine(line);
-            }
-            return result.ToString();
-        }
-
-        static void CompileAndRun(string csharpCode)
-        {
-            // Prepare a C# program for compilation
-            string[] csharpClass =
+        // Prepare a C# program for compilation
+        string[] csharpClass =
             {
                 @"using System;
                   using SoftwareAcademy;
@@ -102,33 +41,33 @@ namespace SoftwareAcademy
                   }"
             };
 
-            // Compile the C# program
-            CompilerParameters compilerParams = new CompilerParameters();
-            compilerParams.GenerateInMemory = true;
-            compilerParams.TempFiles = new TempFileCollection(".");
-            compilerParams.ReferencedAssemblies.Add("System.dll");
-            compilerParams.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly().Location);
-            CSharpCodeProvider csharpProvider = new CSharpCodeProvider();
-            CompilerResults compile = csharpProvider.CompileAssemblyFromSource(
-                compilerParams, csharpClass);
+        // Compile the C# program
+        CompilerParameters compilerParams = new CompilerParameters();
+        compilerParams.GenerateInMemory = true;
+        compilerParams.TempFiles = new TempFileCollection(".");
+        compilerParams.ReferencedAssemblies.Add("System.dll");
+        compilerParams.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly().Location);
+        CSharpCodeProvider csharpProvider = new CSharpCodeProvider();
+        CompilerResults compile = csharpProvider.CompileAssemblyFromSource(
+            compilerParams, csharpClass);
 
-            // Check for compilation errors
-            if (compile.Errors.HasErrors)
+        // Check for compilation errors
+        if (compile.Errors.HasErrors)
+        {
+            string errorMsg = "Compilation error: ";
+            foreach (CompilerError ce in compile.Errors)
             {
-                string errorMsg = "Compilation error: ";
-                foreach (CompilerError ce in compile.Errors)
-                {
-                    errorMsg += "\r\n" + ce.ToString();
-                }
-                throw new Exception(errorMsg);
+                errorMsg += "\r\n" + ce.ToString();
             }
-
-            // Invoke the Main() method of the compiled class
-            Assembly assembly = compile.CompiledAssembly;
-            Module module = assembly.GetModules()[0];
-            Type type = module.GetType("RuntimeCompiledClass");
-            MethodInfo methInfo = type.GetMethod("Main");
-            methInfo.Invoke(null, null);
+            throw new Exception(errorMsg);
         }
+
+        // Invoke the Main() method of the compiled class
+        Assembly assembly = compile.CompiledAssembly;
+        Module module = assembly.GetModules()[0];
+        Type type = module.GetType("RuntimeCompiledClass");
+        MethodInfo methInfo = type.GetMethod("Main");
+        methInfo.Invoke(null, null);
     }
 }
+
