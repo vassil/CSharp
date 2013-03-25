@@ -30,7 +30,6 @@ public class SoftwareAcademyCommandExecutor
         string[] csharpClass =
             {
                 @"using System;
-                  using SoftwareAcademy;
 
                   public class RuntimeCompiledClass
                   {
