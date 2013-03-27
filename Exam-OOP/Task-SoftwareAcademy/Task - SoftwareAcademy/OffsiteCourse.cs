@@ -64,7 +64,7 @@ public class OffsiteCourse : Courses, IOffsiteCourse
             toString.Append("]; ");
 
         }
-        toString.AppendFormat("Lab={0}", this.Town);
+        toString.AppendFormat("Town={0}", this.Town);
 
         return toString.ToString();
     }

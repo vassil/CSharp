@@ -25,7 +25,7 @@ namespace AcademyRPG
             }
         }
 
-        public Rock(int hitpoints, Point position, int owner)
+        public Rock(int hitpoints, Point position)
             : base(position, 0)
         {
             this.HitPoints = hitpoints;

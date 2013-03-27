@@ -7,6 +7,8 @@ namespace AcademyRPG
 {
     public class Ninja : Character, IFighter, IGatherer
     {
+        private int attackPoints;
+
         public Ninja(string name, Point position, int owner)
             : base(name, position, owner)
         {
@@ -15,10 +17,10 @@ namespace AcademyRPG
 
         public int AttackPoints
         {
-            get { return 0; }
+            get { return this.attackPoints; }
             private set
             {
-                this.AttackPoints = value;
+                this.attackPoints = value;
                 //TODO: Could leed to stack overflow
             }
         }

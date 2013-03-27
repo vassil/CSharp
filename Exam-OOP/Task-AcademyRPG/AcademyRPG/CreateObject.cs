@@ -23,7 +23,7 @@ namespace AcademyRPG
                         int hitpoints = int.Parse(commandWords[2]);
                         Point position = Point.Parse(commandWords[3]);
                         int owner = 0;
-                        this.AddObject(new Rock(hitpoints, position, 0));
+                        this.AddObject(new Rock(hitpoints, position));
                         break;
                     }
                 case "knight":
@@ -38,8 +38,7 @@ namespace AcademyRPG
                     {
                         string name = commandWords[2];
                         Point position = Point.Parse(commandWords[3]);
-                        int owner = 0;
-                        this.AddObject(new Giant(name, position, owner));
+                        this.AddObject(new Giant(name, position));
                         break;
                     }
                 case "ninja":

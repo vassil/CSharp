@@ -9,7 +9,8 @@ namespace AcademyRPG
     public class Giant : Character, IFighter, IGatherer
     {
         private int attackPoints = 150;
-        public Giant(string name, Point position, int owner)
+
+        public Giant(string name, Point position)
             : base(name, position, 0)
         {
             this.HitPoints = 200;
@@ -21,7 +22,6 @@ namespace AcademyRPG
             private set
             {
                 this.attackPoints = value;
-                //TODO: Could leed to stack overflow
             }
         }
 
