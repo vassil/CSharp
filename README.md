@@ -1,8 +1,10 @@
-These are my C# homeworks from Telerik Academy
+<h2>These are my C# homeworks from Telerik Academy</h2>
 ======
 
-C# Part 1
-C# Part 2
-OOP Course
-Quality Programming Code Course
-Algorithms and Data Structures Course
+<ul>
+  <li>C# Part 1</li>
+  <li>C# Part 2</li>
+  <li>OOP Course</li>
+  <li>Quality Programming Code Course</li>
+  <li>Algorithms and Data Structures Course</li>
+</ul>
