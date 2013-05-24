@@ -1,22 +1,8 @@
-CSharp
+These are my C# homeworks from Telerik Academy
 ======
 
-Projects and Telerik Academy homeworks
-
-Added for now:
-
-01.Arrays
-
-02.MultidimentionalArrays
-
-03.Methods
-
-04.NumeralSystems
-
-05.ClassesAndObjects
-
-06.ExceptionHandling
-
-07.TextFiles
-
-08.StringsAndTextProcessing
+C# Part 1
+C# Part 2
+OOP Course
+Quality Programming Code Course
+Algorithms and Data Structures Course
