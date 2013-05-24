@@ -175,24 +175,5 @@ Program.cs
 *.rar
 
 #Folders
-01.IntroToProgramming
-02.PrimitveDataTypesAndVariables
-03.OperatorsExpressionsAndStatements
-04.ConsoleInputOutput
-05.ConditionalStatements
-06.Loops
-09.MethodsOld
-BGCoder-FirstTest
-Old-Arrays
-CSharp-Exam
-PracticalExam-PracticalExam
-PracticalExam-SampleExam
-PracticalExam-VariantOne
-PracticalExam-VariantTwo
-Snake
+BGCoder
 TestSolution
-Book-Arrays
-ExamPartTwo
-Exam-4Feb-2013
-QPC Team project
-07.HighQualityMethods
