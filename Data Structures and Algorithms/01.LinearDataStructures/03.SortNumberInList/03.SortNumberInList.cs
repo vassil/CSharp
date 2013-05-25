@@ -19,8 +19,19 @@ public class SumAndAverageOfList
             sequence.Add(int.Parse(userInput[i]));
         }
 
-        Console.WriteLine("Average of numbers in sequence -> {0}", sequence.Average());
-        Console.WriteLine("Sum of numbers in sequence -> {0}", sequence.Sum());
+        sequence.Sort();
+
+        Console.Write("Sorted numbers in increasing order -> ");
+        for (int i = 0; i < sequence.Count; i++)
+        {
+            if (i == sequence.Count-1)
+            {
+                Console.Write("{0}", sequence[i]);
+                break;
+            }
+            Console.Write("{0}, ", sequence[i]);
+        }
+        Console.WriteLine();
     }
 }
 
