@@ -170,7 +170,6 @@ pip-log.txt
 *.dbproj
 *.config
 AssemblyInfo.cs
-Program.cs
 *.zip
 *.rar
 
