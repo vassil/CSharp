@@ -9,6 +9,8 @@ public class QueuesS4
 
         Queue<int> sequence = new Queue<int>();
 
+        int elementsCount = 1;
+
         int lastIndex = n;
         sequence.Enqueue(n);
 
@@ -18,9 +20,24 @@ public class QueuesS4
             lastIndex = sequence.Dequeue();
             Console.WriteLine("{0} ", lastIndex);
 
+            if (elementsCount >= 50)
+            {
+                continue;
+            }
             sequence.Enqueue(lastIndex + 1);
+            elementsCount++;
+            if (elementsCount >= 50)
+            {
+                continue;
+            }
             sequence.Enqueue((2 * lastIndex) + 1);
+            elementsCount++;
+            if (elementsCount >= 50)
+            {
+                continue;
+            }
             sequence.Enqueue(lastIndex + 2);
+            elementsCount++;
         }
 
     }
