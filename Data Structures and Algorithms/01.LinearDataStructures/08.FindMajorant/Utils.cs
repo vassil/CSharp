@@ -1,25 +1,25 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 
 public static class Utils
 {
-    public static int FindMajorant(this int[] array)
+    public static int FindMajorant(this IList<int> sequence)
     {
-        int majorantFormula = (array.Length / 2) + 1;
+        int majorantFormula = (sequence.Count / 2) + 1;
         int counter = 0;
 
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < sequence.Count; i++)
         {
-            for (int j = 0; j < array.Length; j++)
+            for (int j = 0; j < sequence.Count; j++)
             {
-                if (array[i] == array[j])
+                if (sequence[i] == sequence[j])
                 {
                     counter++;
                 }
 
                 if (counter == majorantFormula)
                 {
-                    return array[i];
+                    return sequence[i];
                 }
             }
 

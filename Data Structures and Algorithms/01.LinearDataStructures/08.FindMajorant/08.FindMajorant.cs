@@ -12,12 +12,12 @@ public class FindMajorant
 
         string[] userInput = Console.ReadLine().Split(' ', ',');
 
-        int[] sequence = new int[userInput.Length];
+        List<int> sequence = new List<int>();
 
         for (int i = 0; i < userInput.Length; i++)
         {
             int number = int.Parse(userInput[i].Trim());
-            sequence[i] = number;
+            sequence.Add(number);
         }
 
         int majorant = sequence.FindMajorant();
