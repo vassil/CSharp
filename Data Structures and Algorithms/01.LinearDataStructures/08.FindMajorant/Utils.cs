@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 public static class Utils
@@ -8,7 +7,6 @@ public static class Utils
     {
         int majorantFormula = (array.Length / 2) + 1;
         int counter = 0;
-        int theMajorant = 0;
 
         for (int i = 0; i < array.Length; i++)
         {
