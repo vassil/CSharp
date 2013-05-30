@@ -16,16 +16,14 @@ public static class Utils
                 {
                     counter++;
                 }
+
+                if (counter == majorantFormula)
+                {
+                    return array[i];
+                }
             }
-           
-            if (counter == majorantFormula)
-            {
-                return array[i];
-            }
-            else
-            {
-                counter = 0;
-            }
+
+            counter = 0;
         }
         return -1;
     }
