@@ -17,11 +17,10 @@ public class RemoveNegativeNumbers
         for (int i = 0; i < userInput.Length; i++)
         {
             int number = int.Parse(userInput[i].Trim());
-            if (number >= 0)
-            {
-                sequence.Add(number);
-            }
+            sequence.Add(number);
         }
+
+        sequence.RemoveAll(element => element < 0);
 
         Console.Write("Removed negative numbers -> ");
         for (int i = 0; i < sequence.Count; i++)
